@@ -1,0 +1,22 @@
+{
+  "name": "musicfilenameviatags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "ffprobe": "^1.1.0",
+    "ffprobe-static": "^3.0.0",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0",
+    "mkdirp": "^0.5.1",
+    "node-id3": "^0.1.17",
+    "os": "^0.1.1",
+    "path": "^0.12.7"
+  }
+}
