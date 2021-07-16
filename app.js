@@ -6,9 +6,9 @@ let id3 = require('node-id3');
 let os = require('os');
 let path = require('path');
 
-if(process.argv.length != 3 && process.argv.length != 4) {
+if(process.argv.length != 3 ) {
   console.error(`Invalid number of arguments. This is the correct usage:
-    node index.js <source directory> <destination directory> [-mirror|-scan]
+    node app.js <source directory> 
     By default, this script will flatten the source nested directory.
   `)
   return;
@@ -70,8 +70,12 @@ function renameFileUsingTags(dir, fileName, fileExtension) {
     let artist = tags.artist;
     var title = tags.title;
 
-    if(title.indexOf("- ") > -1) {
+    if(title != null && title.indexOf("- ") > -1) {
       title = title.replace("- ", "(") + ")";
+    }
+    if(title != null) {
+      title = title.split("&quot;").join('"');
+      title = title.split("&#39;").join("'");
     }
     let newFileName = `${dir}${path.sep}${artist} - ${title}.${fileExtension}`;
     renameFile(fileName, newFileName);
